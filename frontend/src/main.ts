@@ -12,10 +12,13 @@ const headers = {
   Accept: "application/json",
 };
 
+// クエリ と 引数 を指定する
+const query = print(Hello);
+
 fetch("http://localhost:3000/graphql", {
   method: "POST",
   headers,
-  body: JSON.stringify({ query: print(Hello) }),
+  body: JSON.stringify({ query }),
 })
   .then((response) => {
     if (!response.ok) {

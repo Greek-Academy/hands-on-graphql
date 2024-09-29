@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const schema = loadSchemaSync(`${__dirname}/schema/hello.graphql`, {
+const schema = loadSchemaSync(`${__dirname}/schema/**/*.graphql`, {
   loaders: [new GraphQLFileLoader()],
 });
 
