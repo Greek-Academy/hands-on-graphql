@@ -28,7 +28,9 @@ fetch("http://localhost:3000/graphql", {
     return response.json();
   })
   .then((response) => {
-    console.log(response);
+    const { getDie } = response.data;
+    consoleEl.innerText = `roll: ${JSON.stringify(getDie.roll)}\n`;
+    consoleEl.innerText += `rollOnce: ${getDie.rollOnce}`;
   })
   .catch((error) => {
     console.error("Error:", error);
