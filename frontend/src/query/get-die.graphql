@@ -1,0 +1,6 @@
+query GetDie($dice: Int, $sides: Int!) {
+  getDie(numSides: $dice) {
+    rollOnce
+    roll(numRolls: $sides)
+  }
+}

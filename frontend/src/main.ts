@@ -1,4 +1,4 @@
-import { RollDice } from "./query/roll-dice.graphql";
+import { GetDie } from "./query/get-die.graphql";
 import { print } from "graphql";
 
 const consoleEl = document.getElementById("console");
@@ -13,7 +13,7 @@ const headers = {
 };
 
 // クエリ と 引数 を指定する
-const query = print(RollDice);
+const query = print(GetDie);
 const variables = { dice: 3, sides: 6 };
 
 fetch("http://localhost:3000/graphql", {
@@ -28,9 +28,7 @@ fetch("http://localhost:3000/graphql", {
     return response.json();
   })
   .then((response) => {
-    response.data.rollDice.forEach((v: number, i: number) => {
-      consoleEl.innerText += `Dice${i + 1}: ${v}\n`;
-    });
+    console.log(response);
   })
   .catch((error) => {
     console.error("Error:", error);
