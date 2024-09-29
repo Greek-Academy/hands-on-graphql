@@ -5,16 +5,18 @@ import { loadSchemaSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import { rollDice } from "./roll-dice";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const schema = loadSchemaSync(`${__dirname}/schema/hello.graphql`, {
+const schema = loadSchemaSync(`${__dirname}/schema/**/*.graphql`, {
   loaders: [new GraphQLFileLoader()],
 });
 
 const root = {
   hello: () => "Hello world!",
+  rollDice,
 };
 
 const app = express();
