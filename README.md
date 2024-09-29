@@ -5,10 +5,12 @@
 ## Backend
 
 - https://expressjs.com/
+- [README.md](backend/README.md)
 
 ## Frontend
 
 - https://vitejs.dev/
+- [README.md](frontend/README.md)
 
 ## How to set up
 
@@ -16,6 +18,8 @@
 npm run install
 npm run dev
 ```
+
+![screenshot](screenshot.png)
 
 ### npm install
 
