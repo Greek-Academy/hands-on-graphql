@@ -29,7 +29,10 @@ fetch("http://localhost:3000/graphql", {
     return response.json();
   })
   .then((response) => {
-    console.log(response.data);
+    const { createMessage: message } = response.data;
+    consoleEl.innerText = `id: ${message.id}\n`;
+    consoleEl.innerText += `id: ${message.author}\n`;
+    consoleEl.innerText += `id: ${message.content}`;
   })
   .catch((error) => {
     console.error("Error:", error);
