@@ -7,6 +7,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { rollDice } from "./roll-dice";
 import { getDie } from "./random-die";
+import { createMessage, getMessage, updateMessage } from "./message";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,6 +20,9 @@ const root = {
   hello: () => "Hello world!",
   rollDice,
   getDie,
+  getMessage,
+  createMessage,
+  updateMessage,
 };
 
 const app = express();

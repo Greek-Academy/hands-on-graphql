@@ -1,4 +1,4 @@
-import { GetDie } from "./query/get-die.graphql";
+import { CreateMessage } from "./query/create-message.graphql";
 import { print } from "graphql";
 
 const consoleEl = document.getElementById("console");
@@ -13,8 +13,9 @@ const headers = {
 };
 
 // クエリ と 引数 を指定する
-const query = print(GetDie);
-const variables = { dice: 3, sides: 6 };
+const query = print(CreateMessage);
+const input = { author: "( ^ω^)", content: "muhoho" };
+const variables = { input };
 
 fetch("http://localhost:3000/graphql", {
   method: "POST",
@@ -28,9 +29,7 @@ fetch("http://localhost:3000/graphql", {
     return response.json();
   })
   .then((response) => {
-    const { getDie } = response.data;
-    consoleEl.innerText = `roll: ${JSON.stringify(getDie.roll)}\n`;
-    consoleEl.innerText += `rollOnce: ${getDie.rollOnce}`;
+    console.log(response.data);
   })
   .catch((error) => {
     console.error("Error:", error);
