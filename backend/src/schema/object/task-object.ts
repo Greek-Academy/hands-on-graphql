@@ -5,7 +5,7 @@ import {
   GraphQLString,
 } from "graphql";
 
-import { getCategory } from "../../repositories/category-repository";
+import { getCategory } from "../../repository/category-repository";
 import { categoryGQL } from "./category-object";
 import { Task } from "../../model";
 

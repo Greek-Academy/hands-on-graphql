@@ -21,10 +21,10 @@ export async function reconnect() {
 async function setup() {
   return await new Promise<Connection>((resolve, reject) => {
     const con = createConnection({
-      host: "localhost",
-      user: "user",
-      password: "password",
-      database: "todo",
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_TABLE,
     });
 
     con.connect((err) => (err ? reject(err) : resolve(con)));

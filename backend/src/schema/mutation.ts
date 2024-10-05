@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLString } from "graphql";
-import { createTaskInputGQL, taskGQL } from "./object";
-import { createTask } from "../repositories";
+import { taskGQL } from "./object";
+import { createTask } from "../repository";
 
 export const mutationGQL = new GraphQLObjectType({
   name: "Mutation",

@@ -1,5 +1,5 @@
 import { GraphQLList, GraphQLObjectType } from "graphql";
-import { taskList } from "../repositories";
+import { taskList } from "../repository";
 import { taskGQL } from "./object";
 
 export const queryGQL = new GraphQLObjectType({
