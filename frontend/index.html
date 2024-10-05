@@ -6,10 +6,28 @@
     <title>GraphQL Hands-On</title>
   </head>
   <body>
-    <pre
-      id="console"
-      style="background-color: black; padding: 1rem; color: antiquewhite"
-    ></pre>
+    <section>
+      <form id="add-task-form" style="display: flex; column-gap: 1rem">
+        <div>
+          <label for="add-task-form-title" style="display: block">Title</label>
+          <input type="text" name="title" id="add-task-form-title" />
+        </div>
+        <div>
+          <label for="add-task-form-description" style="display: block"
+            >Description</label
+          >
+          <textarea
+            name="description"
+            id="add-task-form-description"
+          ></textarea>
+          <button id="add-task">Add task</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <ul id="task-list"></ul>
+    </section>
+
     <script type="module" src="src/main.ts"></script>
   </body>
 </html>
