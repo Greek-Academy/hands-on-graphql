@@ -1,4 +1,4 @@
-export const graphQLEndpoint = "http://localhost:3000/graphql";
+export const graphQLEndpoint = import.meta.env.VITE_GRAPHQL_ENDPOINT;
 export const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",

@@ -5,6 +5,7 @@ import { graphQLEndpoint, headers } from "../const";
 const addTaskFormEl =
   document.querySelector<HTMLFormElement>("#add-task-form")!;
 
+// submit イベントの割り当て
 addTaskFormEl.addEventListener("submit", async function (ev: SubmitEvent) {
   ev.preventDefault();
 
@@ -15,6 +16,7 @@ addTaskFormEl.addEventListener("submit", async function (ev: SubmitEvent) {
   await createTask(title, description);
 });
 
+// title の取得 & 簡易バリデーション
 function getTitle(formData: FormData) {
   const title = formData.get("title");
   if (typeof title === "string" && title !== "") {
@@ -23,6 +25,7 @@ function getTitle(formData: FormData) {
   throw new Error("Please input the `title`.");
 }
 
+// description の取得 & 簡易バリデーション
 function getDescription(formData: FormData) {
   const description = formData.get("description");
   if (typeof description === "string" && description !== "") {
@@ -31,6 +34,7 @@ function getDescription(formData: FormData) {
   throw new Error("Please input the `title`.");
 }
 
+// タスクの作成
 async function createTask(title: string, description: string) {
   return fetch(graphQLEndpoint, {
     method: "POST",

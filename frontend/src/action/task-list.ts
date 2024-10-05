@@ -9,6 +9,7 @@ type Task = {
 
 const taskListUlEl = document.querySelector<HTMLUListElement>("#task-list")!;
 
+// 一覧の取得
 fetch(graphQLEndpoint, {
   method: "POST",
   headers,
@@ -22,6 +23,7 @@ fetch(graphQLEndpoint, {
   })
   .then((response: { data: { taskList: Task[] } }) => {
     const { taskList } = response.data;
+
     taskList.forEach((task) => {
       const liEl = document.createElement("li");
       liEl.innerText = `title: ${task.title}
