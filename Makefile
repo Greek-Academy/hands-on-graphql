@@ -3,8 +3,8 @@ include ./database/.env
 .PHONY: db-bash back-bash front-bash back-dev front-dev mysql
 
 setup:
-	@docker compose run backend npm install
-	@docker compose run frontend npm install
+	@docker compose run --rm backend npm install
+	@docker compose run --rm frontend npm install
 
 db-bash:
 	@docker compose exec database bash
