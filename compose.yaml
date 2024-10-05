@@ -9,6 +9,22 @@ services:
       - ./database/conf.d:/etc/mysql/conf.d
       - ./database/initdb.d:/docker-entrypoint-initdb.d
       - db-data:/var/lib/mysql
-      
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app
+    tty: true
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+    tty: true
+    ports:
+      - "5173:5173"
+
 volumes:
   db-data:
