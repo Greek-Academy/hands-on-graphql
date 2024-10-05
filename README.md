@@ -17,6 +17,9 @@
 ```bash
 docker compose build
 make setup
+cp database/.env.example database/.env
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 ```
 
 ## Usage
