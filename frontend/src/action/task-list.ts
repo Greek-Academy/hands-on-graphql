@@ -3,6 +3,7 @@ import { TaskList } from "../query/todo.graphql";
 import { graphQLEndpoint, headers } from "../const";
 
 type Task = {
+  taskId: string;
   title: string;
   description: string;
 };
@@ -26,8 +27,11 @@ fetch(graphQLEndpoint, {
 
     taskList.forEach((task) => {
       const liEl = document.createElement("li");
-      liEl.innerText = `title: ${task.title}
-                        description: ${task.description}`;
+      liEl.innerHTML = `
+        <div class="task-id">ID: ${task.taskId}</div>
+        <div>${task.title}</div
+        <div>${task.description}</div>
+      `;
       taskListUlEl.append(liEl);
     });
   })

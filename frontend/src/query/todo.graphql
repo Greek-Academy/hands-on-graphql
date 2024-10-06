@@ -1,5 +1,6 @@
 query TaskList {
   taskList {
+    taskId
     categoryId
     title
     description
@@ -11,16 +12,6 @@ query TaskList {
 
 mutation CreateTask($title: String!, $description: String!) {
   createTask(title: $title, description: $description) {
-    title
-    description
-    category {
-      name
-    }
-  }
-}
-
-subscription SyncCreateTask($title: String!, $description: String!) {
-  syncCreateTask(title: $title, description: $description) {
     title
     description
     category {
