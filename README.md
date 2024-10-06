@@ -25,9 +25,15 @@ cp frontend/.env.example frontend/.env
 ## Usage
 
 ```bash
+composer up -d
+```
+
+### Frontend
+```bash
 make front-dev
 ```
 
+### Backend
 ```bash
 make back-dev
 ```
